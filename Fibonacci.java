@@ -1,7 +1,11 @@
 public class Fibonacci {
 
     public static int fibonacci(int n) {
-        // Su codigo aqui
+        if(n <= 1){
+			return n;
+		}else{
+			return fibonacci(n-1) + fibonacci(n-2);
+		} 
         return 0;
     }
 
