@@ -1,9 +1,30 @@
-public class Perm {
+import java.util.Arrays;
+import java.util.List;
 
+public class Perm {
+	
+	public static String[] listaletras = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     // Asuma que todos los parametros son validos
     public static String permutation(String message, int spaces) {
-        // Su codigo aqui
-        return "";
+        int cont = message.length();
+		String nueva = "";
+		if(spaces >= 26){
+			
+			spaces = spaces - 26;	
+		}
+		for(int i = 0; i < cont; i++){
+			
+			String letra = String.valueOf(message.charAt(i));
+			
+			
+			int pos = Arrays.asList(listaletras).indexOf(letra) + spaces;
+			//int pos = listaletras.indexOf(letra);
+			
+			nueva += listaletras[pos];
+		}
+		
+		
+        return nueva;
     }
 
     // NO MODIFICAR A PARTIR DE AQUI
